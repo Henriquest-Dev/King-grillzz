@@ -22,7 +22,7 @@ const I18N = {
     "gal.title": "Saído do fogo",
     "contact.eyebrow": "Reserve já a sua mesa", "contact.title": "A brasa está acesa.", "contact.city": "Maputo, Moçambique",
     "contact.wa": "Reservar por WhatsApp", "contact.call": "Ligar agora",
-    "footer.rights": "Todos os direitos reservados.",
+    "footer.rights": "Todos os direitos reservados.", "footer.credits": "Créditos das imagens das bebidas",
     marquee: ["Grelhados", "Burgers", "Marisco", "Pizzas", "Cocktails", "After Work"],
   },
   en: {
@@ -45,7 +45,7 @@ const I18N = {
     "gal.title": "Straight off the fire",
     "contact.eyebrow": "Book your table", "contact.title": "The fire is lit.", "contact.city": "Maputo, Mozambique",
     "contact.wa": "Book via WhatsApp", "contact.call": "Call now",
-    "footer.rights": "All rights reserved.",
+    "footer.rights": "All rights reserved.", "footer.credits": "Drink image credits",
     marquee: ["Grills", "Burgers", "Seafood", "Pizzas", "Cocktails", "After Work"],
   },
 };
@@ -65,7 +65,7 @@ const MENU = [
     ["ladies fillet steak", "950"], ["gourmet mignon fillet", "1260"], ["rich & tender lamb shank", "1460"],
     ["souvlaki short ribs", "1460"], ["king's black forest", "1650"], ["the king's plate", "1650"], ["chicken & rib combo", "1350"],
   ]},
-  { name: { pt: "Frango", en: "Chicken" }, sub: { pt: "Peri-peri & crocante", en: "Peri-peri & crispy" }, theme: "#e0612a", img: "assets/dishes/crispy-wings.webp", items: [
+  { name: { pt: "Frango", en: "Chicken" }, sub: { pt: "Peri-peri & crocante", en: "Peri-peri & crispy" }, theme: "#e0612a", img: "assets/dishes/crispy-wings.webp", plate: true, items: [
     ["portuguese peri-peri chicken", "940"], ["grilled chicken", "550 / 980"], ["zambezian chicken", "550 / 920"],
     ["crispy fried chicken", "650 / 1160"], ["crispy cheesy chicken breasts", "860"], ["chicken espetada", "960"],
     ["king's wings", "950"], ["grilled wings", "560"], ["king's double chicken", "1350"],
@@ -120,7 +120,7 @@ const MENU = [
 ];
 
 /* =========================================================
-   Bebidas — ilustrações SVG para refrigerantes e decorações
+   Bebidas — fotos dos refrigerantes do Wikimedia Commons (créditos no rodapé); SVG para a água e as decorações
    ========================================================= */
 const SVG = {
   slice: (rind, flesh, seg) => `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" fill="${rind}"/><circle cx="50" cy="50" r="42" fill="#fffbe8"/><circle cx="50" cy="50" r="39" fill="${flesh}"/>${
@@ -131,7 +131,6 @@ const SVG = {
   berries: () => `<svg viewBox="0 0 100 100">${[[35, 55, 20, "#8e2a4f"], [62, 48, 18, "#a8325c"], [52, 72, 16, "#6e1f3f"]].map(([x, y, r, c]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/><circle cx="${x - r / 3}" cy="${y - r / 3}" r="${r / 4}" fill="#fff" opacity=".35"/>`).join("")}<path d="M60 30 C55 20 45 18 40 22" stroke="#3f8f3a" stroke-width="3" fill="none"/></svg>`,
   ice: () => `<svg viewBox="0 0 100 100"><rect x="14" y="14" width="72" height="72" rx="14" fill="#e8f5fb" opacity=".9" transform="rotate(12 50 50)"/><rect x="24" y="22" width="22" height="10" rx="5" fill="#fff" transform="rotate(12 50 50)"/><rect x="14" y="14" width="72" height="72" rx="14" fill="none" stroke="#b9dcea" stroke-width="3" transform="rotate(12 50 50)"/></svg>`,
   bubbles: () => `<svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="3" opacity=".9">${[[30, 70, 14], [62, 48, 20], [40, 26, 9], [78, 80, 8]].map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}"/>`).join("")}</svg>`,
-  can: (body, label, text = "#fff") => `<svg viewBox="0 0 120 230" role="img" aria-label="${label}"><defs><linearGradient id="g${label.replace(/\W/g, "")}" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".25"/><stop offset=".25" stop-color="#fff" stop-opacity=".25"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient></defs><path d="M22 12 H98 L106 30 V200 L98 218 H22 L14 200 V30Z" fill="${body}"/><path d="M22 12 H98 L106 30 V200 L98 218 H22 L14 200 V30Z" fill="url(#g${label.replace(/\W/g, "")})"/><rect x="24" y="4" width="72" height="10" rx="4" fill="#c9c9c9"/><rect x="24" y="216" width="72" height="8" rx="4" fill="#b5b5b5"/><text x="60" y="122" fill="${text}" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="${label.length > 9 ? 15 : 19}" text-anchor="middle" transform="rotate(-90 60 120)">${label}</text><text x="60" y="196" fill="${text}" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" opacity=".8">330 ml</text></svg>`,
   bottle: () => `<svg viewBox="0 0 120 230" role="img" aria-label="Água"><path d="M48 6 H72 V30 C72 40 96 48 96 74 V208 C96 218 88 224 78 224 H42 C32 224 24 218 24 208 V74 C24 48 48 40 48 30Z" fill="#d7eef7" stroke="#9fcbe0" stroke-width="3"/><rect x="46" y="2" width="28" height="14" rx="3" fill="#2f7fb0"/><rect x="24" y="110" width="72" height="56" fill="#2f7fb0"/><text x="60" y="144" fill="#fff" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="18" text-anchor="middle">ÁGUA</text><path d="M34 80 V200" stroke="#fff" stroke-width="5" opacity=".6" stroke-linecap="round"/></svg>`,
 };
 const lime = () => SVG.slice("#5f9e32", "#cfe58a", "#b6d65f");
@@ -144,12 +143,12 @@ const DRINKS = [
   { name: { pt: "Mojito Morango", en: "Strawberry Mojito" }, sub: { pt: "Cocktail", en: "Cocktail" }, theme: "#e06aa6", img: "assets/drinks/morango.webp", g: [SVG.strawberry, SVG.mint] },
   { name: { pt: "Frutos Vermelhos", en: "Berry Lemonade" }, sub: { pt: "Limonada", en: "Cocktail" }, theme: "#ad97cf", img: "assets/drinks/frutos.webp", g: [lemon, SVG.berries] },
   { name: { pt: "Frozen Manga", en: "Mango Frozen" }, sub: { pt: "Frozen", en: "Frozen" }, theme: "#e8bd45", img: "assets/drinks/frozen.webp", g: [orange, lime] },
-  { name: "Coca-Cola", sub: { pt: "Refrigerante", en: "Soft drink" }, theme: "#d83c3a", svg: () => SVG.can("#c8102e", "Coca-Cola"), g: [SVG.ice, lemon] },
-  { name: "Coca-Cola Zero", sub: { pt: "Sem açúcar", en: "Zero sugar" }, theme: "#3a3434", svg: () => SVG.can("#1b1b1b", "Coca-Cola Zero", "#e8102e"), g: [SVG.ice, lime] },
-  { name: "Pepsi", sub: { pt: "Refrigerante", en: "Soft drink" }, theme: "#3466bb", svg: () => SVG.can("#004b93", "Pepsi"), g: [SVG.ice, SVG.bubbles] },
-  { name: "Fanta", sub: { pt: "Laranja", en: "Orange" }, theme: "#f08d2b", svg: () => SVG.can("#f57c00", "Fanta"), g: [orange, SVG.ice] },
-  { name: "Sprite", sub: { pt: "Lima-limão", en: "Lemon-lime" }, theme: "#45a865", svg: () => SVG.can("#00843d", "Sprite"), g: [lime, SVG.ice] },
-  { name: "Schweppes", sub: { pt: "Água tónica", en: "Tonic water" }, theme: "#8fa7d9", svg: () => SVG.can("#f1c400", "Schweppes", "#1d1d1b"), g: [lemon, SVG.ice] },
+  { name: "Coca-Cola", sub: { pt: "Refrigerante", en: "Soft drink" }, theme: "#d83c3a", img: "assets/drinks/coca-cola.webp", g: [SVG.ice, lemon] },
+  { name: "Coca-Cola Zero", sub: { pt: "Sem açúcar", en: "Zero sugar" }, theme: "#3a3434", img: "assets/drinks/coca-cola-zero.webp", g: [SVG.ice, lime] },
+  { name: "Pepsi", sub: { pt: "Lima · zero açúcar", en: "Lime · zero sugar" }, theme: "#3466bb", img: "assets/drinks/pepsi.webp", g: [SVG.ice, SVG.bubbles] },
+  { name: "Fanta", sub: { pt: "Laranja", en: "Orange" }, theme: "#f08d2b", img: "assets/drinks/fanta.webp", wide: true, g: [orange, SVG.ice] },
+  { name: "Sprite", sub: { pt: "Lima-limão", en: "Lemon-lime" }, theme: "#45a865", img: "assets/drinks/sprite.webp", g: [lime, SVG.ice] },
+  { name: "Schweppes", sub: { pt: "Água tónica", en: "Tonic water" }, theme: "#8fa7d9", img: "assets/drinks/schweppes.webp", g: [lemon, SVG.ice] },
   { name: { pt: "Água", en: "Water" }, sub: { pt: "Mineral", en: "Mineral" }, theme: "#86bfd6", svg: () => SVG.bottle(), g: [SVG.ice, SVG.bubbles] },
 ];
 
@@ -183,6 +182,8 @@ function createWheel(root, items, { onChange, autoplay } = {}) {
       const img = document.createElement("img");
       img.src = it.img; img.alt = ""; img.decoding = "async";
       if (it.round) img.className = "is-round";
+      if (it.wide) img.className = "is-wide";
+      if (it.plate) n.insertAdjacentHTML("beforeend", '<span class="wheel__plate"></span>');
       n.appendChild(img);
     }
     ring.appendChild(n);
