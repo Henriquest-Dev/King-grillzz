@@ -17,27 +17,34 @@
 
   <!-- NAV -->
   <header class="nav" id="nav">
-    <a href="#top" class="nav__brand" aria-label="King of the Grill — início">
+    <a href="#top" class="nav__brand" aria-label="King of the Grill">
       <img src="assets/img/logo.png" alt="King of the Grill" width="629" height="600">
       <span>KING OF THE GRILL<small>Baía Mall</small></span>
     </a>
     <nav class="nav__links" id="navLinks" aria-label="Principal">
-      <a href="#menu" class="pill">Menu</a>
-      <a href="#experiencia" class="pill">Experiência</a>
-      <a href="#galeria" class="pill">Galeria</a>
-      <a href="#contacto" class="pill">Contacto</a>
+      <a href="#menu" class="pill" data-i18n="nav.menu">Menu</a>
+      <a href="#bebidas" class="pill" data-i18n="nav.drinks">Bebidas</a>
+      <a href="#experiencia" class="pill" data-i18n="nav.experience">Experiência</a>
+      <a href="#galeria" class="pill" data-i18n="nav.gallery">Galeria</a>
+      <a href="#contacto" class="pill" data-i18n="nav.contact">Contacto</a>
     </nav>
-    <a href="#contacto" class="btn btn--red nav__cta">Reservar</a>
-    <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
-      <span></span><span></span>
-    </button>
+    <div class="nav__right">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang__btn" data-lang="pt" aria-pressed="true">PT</button>
+        <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="#contacto" class="btn btn--red nav__cta" data-i18n="nav.reserve">Reservar</a>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
   </header>
 
   <main id="top">
     <!-- HERO -->
     <section class="hero" aria-labelledby="heroTitle">
       <div class="hero__bg" aria-hidden="true"></div>
-      <p class="hero__kicker reveal">Forjado no fogo · Maputo</p>
+      <p class="hero__kicker reveal" data-i18n="hero.kicker">Forjado no fogo · Maputo</p>
 
       <div class="hero__stage">
         <h1 class="hero__word" id="heroTitle" aria-label="Grill">
@@ -45,122 +52,148 @@
             <span>G</span><span>R</span><span>I</span><span>L</span><span>L</span>
           </span>
         </h1>
-        <p class="hero__script" aria-hidden="true">Rei da Brasa</p>
+        <p class="hero__script" aria-hidden="true" data-i18n="hero.script">Rei da Brasa</p>
         <div class="hero__glow" aria-hidden="true"></div>
-        <img class="hero__dish" id="heroDish" src="assets/dishes/burger.webp" alt="Burger com anéis de cebola" width="704" height="800">
+        <img class="hero__dish" id="heroDish" src="assets/dishes/burger.webp" alt="Burger" width="704" height="800">
       </div>
 
       <div class="hero__row">
         <div class="hero__actions reveal">
-          <a href="#menu" class="btn btn--wine">Ver Menu <span class="btn__arrow" aria-hidden="true">↗</span></a>
+          <a href="#menu" class="btn btn--wine" data-i18n="hero.cta">Ver Menu</a>
           <span class="hero__divider" aria-hidden="true"></span>
-          <a href="#contacto" class="link">Contacto</a>
+          <a href="#contacto" class="link" data-i18n="nav.contact">Contacto</a>
         </div>
-        <p class="hero__lede reveal">Onde a brasa encontra o convívio. Do bife grelhado ao burger gigante, do marisco aos cocktails do after work — cada prato sai do fogo com carácter.</p>
+        <p class="hero__lede reveal" data-i18n="hero.lede">Onde a brasa encontra o convívio. Do bife grelhado ao burger gigante, do marisco aos cocktails do after work — cada prato sai do fogo com carácter.</p>
       </div>
 
       <ul class="hero__cards" aria-label="Destaques">
         <li class="card reveal">
           <img src="assets/dishes/steak.webp" alt="" width="800" height="800">
-          <div><p>Grelhados</p><strong>desde MTN 950</strong></div>
+          <div><p data-i18n="cat.grill">Grelhados</p><strong><span data-i18n="from">desde</span> MTN 950</strong></div>
         </li>
         <li class="card reveal">
           <img src="assets/dishes/burger.webp" alt="" width="704" height="800">
-          <div><p>Burgers</p><strong>desde MTN 550</strong></div>
+          <div><p>Burgers</p><strong><span data-i18n="from">desde</span> MTN 550</strong></div>
         </li>
         <li class="card reveal">
           <img src="assets/dishes/crispy-wings.webp" alt="" width="800" height="711">
-          <div><p>Frango &amp; Asas</p><strong>desde MTN 550</strong></div>
+          <div><p data-i18n="cat.chicken">Frango</p><strong><span data-i18n="from">desde</span> MTN 550</strong></div>
         </li>
       </ul>
     </section>
 
     <!-- MARQUEE -->
     <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Grelhados</span><i>✦</i><span>Burgers</span><i>✦</i><span>Marisco</span><i>✦</i><span>Pizzas</span><i>✦</i><span>Cocktails</span><i>✦</i><span>After Work</span><i>✦</i>
-        <span>Grelhados</span><i>✦</i><span>Burgers</span><i>✦</i><span>Marisco</span><i>✦</i><span>Pizzas</span><i>✦</i><span>Cocktails</span><i>✦</i><span>After Work</span><i>✦</i>
-      </div>
+      <div class="marquee__track" id="marquee"></div>
     </div>
 
-    <!-- MENU -->
+    <!-- FOOD MENU — carrossel em roda -->
     <section class="menu" id="menu" aria-labelledby="menuTitle">
       <header class="section-head reveal">
-        <p class="eyebrow">A carta</p>
-        <h2 id="menuTitle">O Menu</h2>
-        <p class="section-head__note">Preços em meticais (MTN), conforme publicados pela marca. Sujeitos a confirmação no restaurante.</p>
+        <p class="eyebrow" data-i18n="menu.eyebrow">A carta</p>
+        <h2 id="menuTitle" data-i18n="menu.title">O Menu</h2>
+        <p class="section-head__note" data-i18n="menu.note">Preços em meticais (MTN), conforme publicados pela marca. Sujeitos a confirmação no restaurante.</p>
       </header>
 
-      <div class="menu__layout">
-        <div class="menu__tabs" role="tablist" aria-label="Categorias do menu" id="menuTabs"></div>
-
-        <div class="menu__panel" id="menuPanel" role="tabpanel" aria-live="polite">
-          <div class="menu__panel-head">
-            <span class="menu__count" id="menuCount">01</span>
-            <h3 id="menuCatTitle">Grelhados</h3>
+      <div class="wheel wheel--food" id="foodWheel">
+        <div class="wheel__stage">
+          <div class="wheel__title" aria-live="polite">
+            <h3 class="wheel__name"></h3>
+            <span class="wheel__sub"></span>
           </div>
-          <ul class="menu__list" id="menuList"></ul>
+          <div class="wheel__ring" aria-hidden="true"></div>
+          <div class="wheel__count" aria-hidden="true"></div>
+          <div class="wheel__panel">
+            <ul class="menu__list"></ul>
+          </div>
         </div>
+        <div class="wheel__controls">
+          <button type="button" class="wheel__nav" data-dir="-1" data-i18n="prev">Anterior</button>
+          <div class="wheel__chips" role="tablist" aria-label="Categorias"></div>
+          <button type="button" class="wheel__nav" data-dir="1" data-i18n="next">Seguinte</button>
+        </div>
+      </div>
+    </section>
 
-        <figure class="menu__visual" aria-hidden="true">
-          <div class="menu__plate"></div>
-          <img id="menuImg" src="assets/dishes/steak.webp" alt="">
-        </figure>
+    <!-- DRINKS MENU -->
+    <section class="drinks" id="bebidas" aria-labelledby="drinksTitle">
+      <header class="section-head reveal">
+        <p class="eyebrow" data-i18n="drinks.eyebrow">Para brindar</p>
+        <h2 id="drinksTitle" data-i18n="drinks.title">Bebidas</h2>
+        <p class="section-head__note" data-i18n="drinks.note">Cocktails da casa e refrigerantes. Preços disponíveis no restaurante.</p>
+      </header>
+
+      <div class="wheel wheel--drinks" id="drinkWheel">
+        <div class="wheel__stage">
+          <div class="wheel__title" aria-live="polite">
+            <h3 class="wheel__name"></h3>
+            <span class="wheel__sub"></span>
+          </div>
+          <div class="wheel__ring" aria-hidden="true"></div>
+          <div class="wheel__garnish wheel__garnish--a" aria-hidden="true"></div>
+          <div class="wheel__garnish wheel__garnish--b" aria-hidden="true"></div>
+          <div class="wheel__count" aria-hidden="true"></div>
+        </div>
+        <div class="wheel__controls">
+          <button type="button" class="wheel__nav" data-dir="-1" data-i18n="prev">Anterior</button>
+          <div class="wheel__chips" role="tablist" aria-label="Bebidas"></div>
+          <button type="button" class="wheel__nav" data-dir="1" data-i18n="next">Seguinte</button>
+        </div>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
     <section class="experience" id="experiencia" aria-labelledby="expTitle">
       <div class="experience__media reveal">
-        <img src="assets/img/kitchen-pass.webp" alt="Passe da cozinha do King of the Grill" loading="lazy" width="900" height="900">
-        <img class="experience__float" src="assets/img/07_capa_reel_ambiente.webp" alt="Sala do restaurante com ecrã para transmissões" loading="lazy" width="360" height="640">
+        <img src="assets/img/kitchen-pass.webp" alt="" loading="lazy" width="900" height="900">
+        <img class="experience__float" src="assets/img/07_capa_reel_ambiente.webp" alt="" loading="lazy" width="360" height="640">
       </div>
       <div class="experience__copy reveal">
-        <p class="eyebrow">A experiência</p>
-        <h2 id="expTitle">Brasa, mesa &amp; convívio</h2>
-        <p>Mesas escuras, luz quente e o cheiro do grelhador. No King of the Grill do Baía Mall a comida chega ao centro da mesa para ser partilhada — e os jogos grandes passam no ecrã.</p>
+        <p class="eyebrow" data-i18n="exp.eyebrow">A experiência</p>
+        <h2 id="expTitle" data-i18n="exp.title">Brasa, mesa &amp; convívio</h2>
+        <p data-i18n="exp.text">Mesas escuras, luz quente e o cheiro do grelhador. No King of the Grill do Baía Mall a comida chega ao centro da mesa para ser partilhada — e os jogos grandes passam no ecrã.</p>
         <ul class="experience__points">
-          <li><strong>Grelhador</strong><span>Bifes, costelas, espetadas e frango peri-peri.</span></li>
-          <li><strong>Do mar</strong><span>Camarão, lulas, kingklip, garoupa e salmão.</span></li>
-          <li><strong>After Work</strong><span>Cocktails frescos para fechar o dia.</span></li>
-          <li><strong>Transmissões</strong><span>Futebol ao vivo na sala.</span></li>
+          <li><strong data-i18n="exp.p1t">Grelhador</strong><span data-i18n="exp.p1">Bifes, costelas, espetadas e frango peri-peri.</span></li>
+          <li><strong data-i18n="exp.p2t">Do mar</strong><span data-i18n="exp.p2">Camarão, lulas, kingklip, garoupa e salmão.</span></li>
+          <li><strong>After Work</strong><span data-i18n="exp.p3">Cocktails frescos para fechar o dia.</span></li>
+          <li><strong data-i18n="exp.p4t">Transmissões</strong><span data-i18n="exp.p4">Futebol ao vivo na sala.</span></li>
         </ul>
       </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- GALLERY (só comida) -->
     <section class="gallery" id="galeria" aria-labelledby="galTitle">
       <header class="section-head reveal">
-        <p class="eyebrow">Galeria</p>
-        <h2 id="galTitle">Saído do fogo</h2>
+        <p class="eyebrow" data-i18n="nav.gallery">Galeria</p>
+        <h2 id="galTitle" data-i18n="gal.title">Saído do fogo</h2>
       </header>
       <div class="gallery__grid">
-        <figure class="g g--tall reveal"><img src="assets/img/02_frango_acompanhamentos.webp" alt="Frango grelhado com acompanhamentos" loading="lazy"></figure>
-        <figure class="g reveal"><img src="assets/img/steak-salad.webp" alt="Bife grelhado com salada" loading="lazy"></figure>
-        <figure class="g reveal"><img src="assets/img/burger-beer.webp" alt="Burger com batatas fritas e cerveja" loading="lazy"></figure>
-        <figure class="g g--tall reveal"><img src="assets/img/01_cocktails.webp" alt="Dois cocktails no balcão" loading="lazy"></figure>
-        <figure class="g reveal"><img src="assets/img/pizza-plates.webp" alt="Pizza" loading="lazy"></figure>
-        <figure class="g reveal"><img src="assets/img/steak-veg.webp" alt="Grelhado com legumes" loading="lazy"></figure>
-        <figure class="g g--tall reveal"><img src="assets/img/03_cocktails.webp" alt="Cocktails de frutos vermelhos e mojito" loading="lazy"></figure>
-        <figure class="g reveal"><img src="assets/img/pizza-curve.webp" alt="Pizza acabada de sair do forno" loading="lazy"></figure>
-        <figure class="g reveal"><img src="assets/img/crispy-wings.webp" alt="Frango crocante" loading="lazy"></figure>
+        <figure class="g g--tall reveal"><img src="assets/img/02_frango_acompanhamentos.webp" alt="" loading="lazy"></figure>
+        <figure class="g reveal"><img src="assets/img/steak-salad.webp" alt="" loading="lazy"></figure>
+        <figure class="g reveal"><img src="assets/img/burger-beer.webp" alt="" loading="lazy"></figure>
+        <figure class="g g--tall reveal"><img src="assets/img/06_capa_reel.webp" alt="" loading="lazy"></figure>
+        <figure class="g reveal"><img src="assets/img/pizza-plates.webp" alt="" loading="lazy"></figure>
+        <figure class="g reveal"><img src="assets/img/steak-veg.webp" alt="" loading="lazy"></figure>
+        <figure class="g g--tall reveal"><img src="assets/img/pizza-slice.webp" alt="" loading="lazy"></figure>
+        <figure class="g reveal"><img src="assets/img/pizza-curve.webp" alt="" loading="lazy"></figure>
+        <figure class="g reveal"><img src="assets/img/crispy-wings.webp" alt="" loading="lazy"></figure>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section class="contact" id="contacto" aria-labelledby="contactTitle">
       <div class="contact__inner reveal">
-        <p class="eyebrow">Reserve já a sua mesa</p>
-        <h2 id="contactTitle">A brasa está acesa.</h2>
+        <p class="eyebrow" data-i18n="contact.eyebrow">Reserve já a sua mesa</p>
+        <h2 id="contactTitle" data-i18n="contact.title">A brasa está acesa.</h2>
         <div class="contact__grid">
           <div>
             <h3>Baía Mall</h3>
-            <p>Maputo, Moçambique</p>
+            <p data-i18n="contact.city">Maputo, Moçambique</p>
             <a class="contact__phone" href="tel:+258853015130">+258 85 301 5130</a>
           </div>
           <div class="contact__btns">
-            <a class="btn btn--red" href="https://wa.me/258853015130" target="_blank" rel="noopener">Reservar por WhatsApp</a>
-            <a class="btn btn--ghost" href="tel:+258853015130">Ligar agora</a>
+            <a class="btn btn--red" href="https://wa.me/258853015130" target="_blank" rel="noopener" data-i18n="contact.wa">Reservar por WhatsApp</a>
+            <a class="btn btn--ghost" href="tel:+258853015130" data-i18n="contact.call">Ligar agora</a>
             <a class="btn btn--ghost" href="https://www.instagram.com/kingofthegrill_baia/" target="_blank" rel="noopener">Instagram</a>
           </div>
         </div>
@@ -171,7 +204,7 @@
   <footer class="footer">
     <img src="assets/img/logo.png" alt="King of the Grill" width="629" height="600" loading="lazy">
     <p>King of the Grill · Baía Mall, Maputo</p>
-    <p class="footer__small">© <span id="year"></span> King of the Grill. Todos os direitos reservados.</p>
+    <p class="footer__small">© <span id="year"></span> King of the Grill. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
   </footer>
 
   <script src="script.js"></script>
