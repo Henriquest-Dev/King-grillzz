@@ -3,56 +3,108 @@
    ========================================================= */
 const I18N = {
   pt: {
-    "nav.menu": "Menu", "nav.drinks": "Bebidas", "nav.experience": "Experiência", "nav.gallery": "Galeria",
-    "nav.contact": "Contacto", "nav.reserve": "Reservar",
-    "hero.kicker": "Forjado no fogo · Maputo", "hero.script": "Rei da Brasa", "hero.cta": "Ver Menu",
-    "hero.lede": "Onde a brasa encontra o convívio. Do bife grelhado ao burger gigante, do marisco aos cocktails do after work — cada prato sai do fogo com carácter.",
+    "nav.home": "Início", "nav.menu": "Menu", "nav.drinks": "Bebidas", "nav.book": "Reservas", "nav.reserve": "Reservar mesa",
+    "hero.kicker": "Forjado no fogo, em Maputo", "hero.script": "Rei da Brasa", "hero.cta": "Ver o menu",
+    "hero.lede": "Onde a brasa encontra o convívio. Do bife grelhado ao burger gigante, do marisco aos cocktails do after work, cada prato sai do fogo com carácter.",
     "from": "desde", "cat.grill": "Grelhados", "cat.chicken": "Frango",
-    "menu.eyebrow": "A carta", "menu.title": "O Menu",
+    "feat.title": "Da brasa para a mesa", "feat.link": "Ver o menu completo",
+    "feat.text": "Quatro secções do menu para começar. A carta completa tem doze, do pequeno-almoço ao marisco.",
+    "sip.title": "Para acompanhar", "sip.text": "Cocktails da casa feitos na hora e refrigerantes bem gelados.", "sip.link": "Ver as bebidas",
+    "menu.title": "O menu",
     "menu.note": "Preços em meticais (MTN), conforme publicados pela marca. Sujeitos a confirmação no restaurante.",
-    "drinks.eyebrow": "Para brindar", "drinks.title": "Bebidas",
+    "drinks.title": "Bebidas",
     "drinks.note": "Cocktails da casa e refrigerantes. Preços disponíveis no restaurante.",
     "prev": "Anterior", "next": "Seguinte",
-    "show.reserve": "Reservar mesa", "show.order": "Pedir no WhatsApp", "show.tabList": "Pratos", "show.tabAbout": "Sobre",
-    "show.dishes": "pratos", "show.food": "Comida", "show.rank": "Nº {n} · A carta", "show.from": "desde MTN {p}",
+    "show.order": "Pedir no WhatsApp", "show.tabList": "Pratos", "show.tabAbout": "Sobre",
+    "show.dishes": "pratos", "show.food": "Comida", "show.from": "desde MTN {p}",
     "show.wa": "Olá King of the Grill! Gostaria de pedir da secção {c}.",
-    "exp.eyebrow": "A experiência", "exp.title": "Brasa, mesa & convívio",
-    "exp.text": "Mesas escuras, luz quente e o cheiro do grelhador. No King of the Grill do Baía Mall a comida chega ao centro da mesa para ser partilhada — e os jogos grandes passam no ecrã.",
+    "exp.title": "Brasa, mesa e convívio",
+    "exp.text": "Mesas escuras, luz quente e o cheiro do grelhador. No King of the Grill do Baía Mall a comida chega ao centro da mesa para ser partilhada, e os jogos grandes passam no ecrã.",
     "exp.p1t": "Grelhador", "exp.p1": "Bifes, costelas, espetadas e frango peri-peri.",
     "exp.p2t": "Do mar", "exp.p2": "Camarão, lulas, kingklip, garoupa e salmão.",
     "exp.p3": "Cocktails frescos para fechar o dia.",
     "exp.p4t": "Transmissões", "exp.p4": "Futebol ao vivo na sala.",
     "gal.title": "Saído do fogo",
-    "contact.eyebrow": "Reserve já a sua mesa", "contact.title": "A brasa está acesa.", "contact.city": "Maputo, Moçambique",
-    "contact.wa": "Reservar por WhatsApp", "contact.call": "Ligar agora",
+    "contact.title": "A brasa está acesa.", "contact.city": "Maputo, Moçambique", "contact.call": "Ligar +258 85 301 5130",
+    "band.text": "Escolha o dia, a hora e onde quer ficar. A confirmação chega pelo WhatsApp.",
     "footer.rights": "Todos os direitos reservados.", "footer.credits": "Créditos das imagens das bebidas",
-    marquee: ["Grelhados", "Burgers", "Marisco", "Pizzas", "Cocktails", "After Work"],
+    "book.title": "Reservar mesa",
+    "book.lede": "Escolha os detalhes e envie o pedido pelo WhatsApp. O restaurante confirma a disponibilidade por lá.",
+    "book.welcome": "Olá de novo, {n}. Já preenchemos os seus dados.",
+    "book.q.people": "Quantas pessoas?", "book.h.people": "Para grupos acima de 20, ligue-nos.",
+    "book.q.day": "Que dia?", "book.otherDay": "Outra data", "book.today": "Hoje", "book.tomorrow": "Amanhã",
+    "book.q.time": "A que horas?", "book.lunch": "Almoço", "book.dinner": "Jantar",
+    "book.q.occasion": "É uma ocasião especial?", "book.q.seat": "Onde prefere ficar?", "book.q.you": "Os seus dados",
+    "book.name": "Nome", "book.phone": "Telemóvel", "book.notes": "Pedidos especiais (opcional)",
+    "book.notesPh": "Alergias, cadeira de bebé, bolo de aniversário…",
+    "book.remember": "Guardar o meu nome e telemóvel neste dispositivo",
+    "book.send": "Enviar pedido de reserva",
+    "book.h.send": "Abre o WhatsApp com a mensagem pronta. A mesa fica reservada quando o restaurante responder.",
+    "book.e.day": "Escolha um dia.", "book.e.time": "Escolha uma hora.", "book.e.name": "Escreva o seu nome.",
+    "book.e.phone": "Escreva um número com pelo menos 9 dígitos.",
+    "book.done.title": "Pedido pronto no WhatsApp",
+    "book.done.text": "Envie a mensagem que abriu no WhatsApp para concluir. Se a janela não abriu, use o botão abaixo.",
+    "book.done.open": "Abrir o WhatsApp",
+    "book.ticket": "Pedido de reserva", "book.t.table": "Mesa", "book.t.day": "Dia", "book.t.time": "Hora",
+    "book.t.occasion": "Ocasião", "book.t.seat": "Lugar", "book.t.name": "Nome", "book.t.foot": "Confirmação pelo WhatsApp",
+    "book.t.people": "{n} pessoas", "book.t.person": "1 pessoa", "book.t.empty": "por escolher",
+    "book.wa": "Olá King of the Grill (Baía Mall)! Gostaria de reservar mesa:\n• Pessoas: {p}\n• Dia: {d}\n• Hora: {h}\n• Ocasião: {o}\n• Lugar: {s}\n• Nome: {n}\n• Telemóvel: {t}{x}",
+    "book.waNotes": "\n• Pedidos: {x}",
+    occasions: ["Refeição normal", "Aniversário", "Encontro", "Negócios", "Ver o jogo", "Família"],
+    seats: [["Sala", "Perto do grelhador e do movimento"], ["Varanda", "Ao ar livre, com vista"], ["Perto do ecrã", "Para ver o jogo"], ["Sem preferência", "O restaurante escolhe"]],
+    marquee: ["Grelhados", "Burgers", "Marisco", "Pizzas", "Cocktails", "After work"],
   },
   en: {
-    "nav.menu": "Menu", "nav.drinks": "Drinks", "nav.experience": "Experience", "nav.gallery": "Gallery",
-    "nav.contact": "Contact", "nav.reserve": "Book a table",
-    "hero.kicker": "Fire forged · Maputo", "hero.script": "King of the Flame", "hero.cta": "See the Menu",
-    "hero.lede": "Where the fire meets good company. From flame-grilled steaks to giant burgers, from seafood to after-work cocktails — every dish leaves the grill with character.",
+    "nav.home": "Home", "nav.menu": "Menu", "nav.drinks": "Drinks", "nav.book": "Bookings", "nav.reserve": "Book a table",
+    "hero.kicker": "Fire forged, in Maputo", "hero.script": "King of the Flame", "hero.cta": "See the menu",
+    "hero.lede": "Where the fire meets good company. From flame-grilled steaks to giant burgers, from seafood to after-work cocktails, every dish leaves the grill with character.",
     "from": "from", "cat.grill": "Grills", "cat.chicken": "Chicken",
-    "menu.eyebrow": "The menu", "menu.title": "Our Menu",
+    "feat.title": "From the fire to the table", "feat.link": "See the full menu",
+    "feat.text": "Four menu sections to start with. The full menu has twelve, from breakfast to seafood.",
+    "sip.title": "To go with it", "sip.text": "House cocktails made to order and ice-cold soft drinks.", "sip.link": "See the drinks",
+    "menu.title": "The menu",
     "menu.note": "Prices in meticais (MTN), as published by the brand. Subject to confirmation at the restaurant.",
-    "drinks.eyebrow": "Raise a glass", "drinks.title": "Drinks",
+    "drinks.title": "Drinks",
     "drinks.note": "House cocktails and soft drinks. Prices available at the restaurant.",
     "prev": "Previous", "next": "Next",
-    "show.reserve": "Book a table", "show.order": "Order on WhatsApp", "show.tabList": "Dishes", "show.tabAbout": "About",
-    "show.dishes": "dishes", "show.food": "Food", "show.rank": "No. {n} · The menu", "show.from": "from MTN {p}",
+    "show.order": "Order on WhatsApp", "show.tabList": "Dishes", "show.tabAbout": "About",
+    "show.dishes": "dishes", "show.food": "Food", "show.from": "from MTN {p}",
     "show.wa": "Hello King of the Grill! I would like to order from the {c} section.",
-    "exp.eyebrow": "The experience", "exp.title": "Fire, table & good company",
-    "exp.text": "Dark tables, warm light and the smell of the grill. At King of the Grill Baía Mall, food lands in the middle of the table to be shared — and the big games play on the screen.",
+    "exp.title": "Fire, table and good company",
+    "exp.text": "Dark tables, warm light and the smell of the grill. At King of the Grill Baía Mall, food lands in the middle of the table to be shared, and the big games play on the screen.",
     "exp.p1t": "The grill", "exp.p1": "Steaks, ribs, skewers and peri-peri chicken.",
     "exp.p2t": "From the sea", "exp.p2": "Prawns, calamari, kingklip, grouper and salmon.",
     "exp.p3": "Fresh cocktails to close the day.",
     "exp.p4t": "Live sports", "exp.p4": "Football live in the dining room.",
     "gal.title": "Straight off the fire",
-    "contact.eyebrow": "Book your table", "contact.title": "The fire is lit.", "contact.city": "Maputo, Mozambique",
-    "contact.wa": "Book via WhatsApp", "contact.call": "Call now",
+    "contact.title": "The fire is lit.", "contact.city": "Maputo, Mozambique", "contact.call": "Call +258 85 301 5130",
+    "band.text": "Pick the day, the time and where you want to sit. Confirmation comes on WhatsApp.",
     "footer.rights": "All rights reserved.", "footer.credits": "Drink image credits",
-    marquee: ["Grills", "Burgers", "Seafood", "Pizzas", "Cocktails", "After Work"],
+    "book.title": "Book a table",
+    "book.lede": "Choose the details and send the request on WhatsApp. The restaurant confirms availability there.",
+    "book.welcome": "Welcome back, {n}. We filled in your details.",
+    "book.q.people": "How many people?", "book.h.people": "For groups over 20, give us a call.",
+    "book.q.day": "Which day?", "book.otherDay": "Another date", "book.today": "Today", "book.tomorrow": "Tomorrow",
+    "book.q.time": "What time?", "book.lunch": "Lunch", "book.dinner": "Dinner",
+    "book.q.occasion": "Is it a special occasion?", "book.q.seat": "Where would you like to sit?", "book.q.you": "Your details",
+    "book.name": "Name", "book.phone": "Mobile", "book.notes": "Special requests (optional)",
+    "book.notesPh": "Allergies, high chair, birthday cake…",
+    "book.remember": "Remember my name and mobile on this device",
+    "book.send": "Send booking request",
+    "book.h.send": "Opens WhatsApp with the message ready. The table is booked once the restaurant replies.",
+    "book.e.day": "Choose a day.", "book.e.time": "Choose a time.", "book.e.name": "Enter your name.",
+    "book.e.phone": "Enter a number with at least 9 digits.",
+    "book.done.title": "Request ready on WhatsApp",
+    "book.done.text": "Send the message that opened in WhatsApp to finish. If the window did not open, use the button below.",
+    "book.done.open": "Open WhatsApp",
+    "book.ticket": "Booking request", "book.t.table": "Table", "book.t.day": "Day", "book.t.time": "Time",
+    "book.t.occasion": "Occasion", "book.t.seat": "Seat", "book.t.name": "Name", "book.t.foot": "Confirmation on WhatsApp",
+    "book.t.people": "{n} people", "book.t.person": "1 person", "book.t.empty": "not chosen",
+    "book.wa": "Hello King of the Grill (Baía Mall)! I would like to book a table:\n• People: {p}\n• Day: {d}\n• Time: {h}\n• Occasion: {o}\n• Seat: {s}\n• Name: {n}\n• Mobile: {t}{x}",
+    "book.waNotes": "\n• Requests: {x}",
+    occasions: ["Regular meal", "Birthday", "Date", "Business", "Watch the game", "Family"],
+    seats: [["Dining room", "Near the grill and the buzz"], ["Balcony", "Open air, with a view"], ["Near the screen", "To watch the game"], ["No preference", "The restaurant chooses"]],
+    marquee: ["Grills", "Burgers", "Seafood", "Pizzas", "Cocktails", "After work"],
   },
 };
 
@@ -197,13 +249,12 @@ function inkFor(hex) {
   return l > 0.62 ? "#1a0b0b" : "#fff";
 }
 
-function createWheel(root, items, { onChange, autoplay } = {}) {
+function createWheel(root, items, { onChange, autoplay, start = 0 } = {}) {
   const stage = root.querySelector(".wheel__stage");
   const ring = root.querySelector(".wheel__ring");
   const title = root.querySelector(".wheel__title");
   const nameEl = root.querySelector(".wheel__name");
   const subEl = root.querySelector(".wheel__sub");
-  const countEl = root.querySelector(".wheel__count");
   const chipsEl = root.querySelector(".wheel__chips");
   const garnish = [...root.querySelectorAll(".wheel__garnish")];
   const info = root.querySelector(".wheel__info");
@@ -250,7 +301,6 @@ function createWheel(root, items, { onChange, autoplay } = {}) {
     fitTitle();
     chips.forEach((c, i) => { c.querySelector(".wheel__chip-name").textContent = t(items[i].name); });
     if (info) {
-      info.querySelector(".wheel__index").textContent = String(cur + 1).padStart(2, "0");
       info.querySelector(".wheel__desc").textContent = it.desc ? t(it.desc) : "";
       info.querySelector(".wheel__tags").innerHTML = it.tags ? t(it.tags).map((x) => `<li>${x}</li>`).join("") : "";
     }
@@ -276,7 +326,6 @@ function createWheel(root, items, { onChange, autoplay } = {}) {
     });
     const chip = chips[cur];
     chipsEl.scrollTo({ left: chip.offsetLeft - chipsEl.clientWidth / 2 + chip.clientWidth / 2, behavior: instant || reduceMotion ? "auto" : "smooth" });
-    countEl.textContent = `${String(cur + 1).padStart(2, "0")} / ${String(N).padStart(2, "0")}`;
 
     const swap = () => {
       setLabels();
@@ -324,16 +373,15 @@ function createWheel(root, items, { onChange, autoplay } = {}) {
   }
 
   addEventListener("resize", fitTitle);
-  go(0, true);
+  go(start, true);
   return { refresh: setLabels };
 }
 
 /* =========================================================
    Vitrine do menu de comida (modelo do vídeo "UI/UX Bunker")
    ========================================================= */
-function createShowcase(root, items) {
+function createShowcase(root, items, start = 0) {
   const plateBox = root.querySelector(".show__plate");
-  const rank = root.querySelector(".show__rank");
   const lines = [...root.querySelectorAll(".show__line")];
   const track = root.querySelector(".show__track");
   const badge = root.querySelector(".show__badge b");
@@ -361,7 +409,6 @@ function createShowcase(root, items) {
 
   function setText(animate) {
     const it = items[cur];
-    rank.textContent = I18N[lang]["show.rank"].replace("{n}", String(cur + 1).padStart(2, "0"));
     [t(it.sub), t(it.name)].forEach((txt, k) => {
       const span = document.createElement("span");
       span.textContent = txt;
@@ -439,12 +486,200 @@ function createShowcase(root, items) {
     if (Math.abs(dx) > 40) go(cur + (dx < 0 ? 1 : -1));
   });
 
-  go(0, true);
+  go(start, true);
   return { refresh: () => setText(false) };
 }
 
-const foodShow = createShowcase(document.getElementById("foodShow"), MENU);
-const drinkWheel = createWheel(document.getElementById("drinkWheel"), DRINKS, { autoplay: 3800 });
+// Índice inicial a partir do endereço (ex.: menu.html?c=2 abre os Burgers)
+const startAt = (key, n) => {
+  const v = parseInt(new URLSearchParams(location.search).get(key), 10);
+  return Number.isInteger(v) && v >= 0 && v < n ? v : 0;
+};
+const $ = (id) => document.getElementById(id);
+
+const foodShow = $("foodShow") && createShowcase($("foodShow"), MENU, startAt("c", MENU.length));
+const drinkWheel = $("drinkWheel") && createWheel($("drinkWheel"), DRINKS, { autoplay: 3800, start: startAt("d", DRINKS.length) });
+
+/* =========================================================
+   Página inicial: secções em destaque e prateleira de bebidas
+   ========================================================= */
+const FEATURED = [0, 2, 3, 5];
+const SHELF = [0, 4, 3, 8];
+function renderHome() {
+  const feat = $("featured");
+  if (feat) {
+    feat.innerHTML = FEATURED.map((i) => {
+      const c = MENU[i];
+      const min = Math.min(...c.items.map(([, p]) => parseInt(p, 10)));
+      return `<li><a href="menu.html?c=${i}" class="feat">
+        <span class="feat__plate"><span class="plate"></span><img src="${c.img}" alt="" loading="lazy" class="${c.round ? "is-round" : ""}"></span>
+        <span class="feat__name">${t(c.name)}</span>
+        <span class="feat__meta">${c.items.length} ${I18N[lang]["show.dishes"]}, ${I18N[lang]["show.from"].replace("{p}", min)}</span>
+      </a></li>`;
+    }).join("");
+  }
+  const shelf = $("sipShelf");
+  if (shelf) {
+    shelf.innerHTML = SHELF.map((i) => {
+      const d = DRINKS[i];
+      return `<li><a href="bebidas.html?d=${i}" class="bottle">
+        ${d.svg ? d.svg() : `<img src="${d.img}" alt="" loading="lazy">`}
+        <span>${t(d.name)}</span>
+      </a></li>`;
+    }).join("");
+  }
+}
+
+/* =========================================================
+   Reservas
+   ========================================================= */
+function createBooking(form) {
+  const pad = (n) => String(n).padStart(2, "0");
+  const iso = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  const locale = () => (lang === "en" ? "en-GB" : "pt-PT");
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const state = { people: 2, day: null, time: null, occasion: 0, seat: 3 };
+  const LUNCH = ["12:00", "12:30", "13:00", "13:30", "14:00", "14:30"];
+  const DINNER = ["18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30"];
+
+  const dayInput = $("dayInput"), name = $("nameInput"), phone = $("phoneInput"), notes = $("notesInput"), remember = $("rememberInput");
+  dayInput.min = iso(today);
+
+  // Dados guardados (só neste navegador)
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem("kotg-guest") || "null"); } catch (e) {}
+  if (saved && saved.name) {
+    name.value = saved.name; phone.value = saved.phone || "";
+    if (saved.people) state.people = saved.people;
+  }
+
+  function chip(label, selected, onClick, extra = "") {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip" + extra;
+    b.setAttribute("aria-pressed", selected);
+    b.innerHTML = label;
+    b.addEventListener("click", onClick);
+    return b;
+  }
+
+  function renderDays() {
+    const box = $("dayChips"); box.replaceChildren();
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(today); d.setDate(d.getDate() + i);
+      const v = iso(d);
+      const top = i === 0 ? I18N[lang]["book.today"] : i === 1 ? I18N[lang]["book.tomorrow"] : d.toLocaleDateString(locale(), { weekday: "short" }).replace(".", "");
+      const bottom = `${d.getDate()} ${d.toLocaleDateString(locale(), { month: "short" }).replace(".", "")}`;
+      box.appendChild(chip(`<b>${top}</b><small>${bottom}</small>`, state.day === v, () => { state.day = v; dayInput.value = ""; update(); }, " chip--day"));
+    }
+  }
+  function timePassed(hhmm) {
+    if (state.day !== iso(today)) return false;
+    const [h, m] = hhmm.split(":").map(Number);
+    const now = new Date();
+    return h * 60 + m <= now.getHours() * 60 + now.getMinutes() + 30;
+  }
+  function renderTimes() {
+    [["lunchChips", LUNCH], ["dinnerChips", DINNER]].forEach(([id, list]) => {
+      const box = $(id); box.replaceChildren();
+      list.forEach((h) => {
+        const b = chip(h, state.time === h, () => { state.time = h; update(); });
+        if (timePassed(h)) { b.disabled = true; if (state.time === h) state.time = null; }
+        box.appendChild(b);
+      });
+    });
+  }
+  function renderOccasions() {
+    const box = $("occasionChips"); box.replaceChildren();
+    I18N[lang].occasions.forEach((o, i) => box.appendChild(chip(o, state.occasion === i, () => { state.occasion = i; update(); })));
+  }
+  function renderSeats() {
+    const box = $("seatChips"); box.replaceChildren();
+    I18N[lang].seats.forEach(([title, desc], i) =>
+      box.appendChild(chip(`<b>${title}</b><small>${desc}</small>`, state.seat === i, () => { state.seat = i; update(); }, " chip--seat")));
+  }
+
+  const dayLabel = () => {
+    if (!state.day) return null;
+    const [y, m, d] = state.day.split("-").map(Number);
+    return new Date(y, m - 1, d).toLocaleDateString(locale(), { weekday: "long", day: "numeric", month: "long" });
+  };
+  const peopleLabel = () => state.people === 1 ? I18N[lang]["book.t.person"] : I18N[lang]["book.t.people"].replace("{n}", state.people);
+
+  function setRow(id, value) {
+    const el = $(id);
+    const v = value || I18N[lang]["book.t.empty"];
+    if (el.textContent !== v) {
+      el.textContent = v;
+      el.classList.toggle("is-empty", !value);
+      if (!reduceMotion) { el.classList.remove("is-new"); void el.offsetWidth; el.classList.add("is-new"); }
+    }
+  }
+  function renderTicket() {
+    setRow("tPeople", peopleLabel());
+    setRow("tDay", dayLabel());
+    setRow("tTime", state.time);
+    setRow("tOccasion", I18N[lang].occasions[state.occasion]);
+    setRow("tSeat", I18N[lang].seats[state.seat][0]);
+    setRow("tName", name.value.trim());
+    const n = notes.value.trim();
+    $("tNotes").hidden = !n; $("tNotes").textContent = n;
+  }
+
+  function update() {
+    $("peopleOut").textContent = state.people;
+    form.querySelector('[data-step="-1"]').disabled = state.people <= 1;
+    form.querySelector('[data-step="1"]').disabled = state.people >= 20;
+    renderDays(); renderTimes(); renderOccasions(); renderSeats(); renderTicket();
+    if (state.day) $("errDay").hidden = true;
+    if (state.time) $("errTime").hidden = true;
+  }
+
+  form.querySelectorAll(".stepper__btn").forEach((b) => b.addEventListener("click", () => {
+    state.people = Math.min(20, Math.max(1, state.people + Number(b.dataset.step))); update();
+  }));
+  dayInput.addEventListener("change", () => { if (dayInput.value) { state.day = dayInput.value; update(); } });
+  [name, notes].forEach((el) => el.addEventListener("input", renderTicket));
+  name.addEventListener("input", () => { if (name.value.trim()) $("errName").hidden = true; });
+  phone.addEventListener("input", () => { if (phone.value.replace(/\D/g, "").length >= 9) $("errPhone").hidden = true; });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const checks = [
+      ["errDay", !!state.day, $("dayChips").querySelector("button")],
+      ["errTime", !!state.time, $("lunchChips").querySelector("button:not(:disabled)") || $("dinnerChips").querySelector("button:not(:disabled)")],
+      ["errName", !!name.value.trim(), name],
+      ["errPhone", phone.value.replace(/\D/g, "").length >= 9, phone],
+    ];
+    checks.forEach(([id, ok]) => { $(id).hidden = ok; });
+    const bad = checks.find(([, ok]) => !ok);
+    if (bad) { bad[2] && bad[2].focus(); return; }
+
+    try {
+      if (remember.checked) localStorage.setItem("kotg-guest", JSON.stringify({ name: name.value.trim(), phone: phone.value.trim(), people: state.people }));
+      else localStorage.removeItem("kotg-guest");
+    } catch (err) {}
+
+    const x = notes.value.trim();
+    const msg = I18N[lang]["book.wa"]
+      .replace("{p}", state.people).replace("{d}", dayLabel()).replace("{h}", state.time)
+      .replace("{o}", I18N[lang].occasions[state.occasion]).replace("{s}", I18N[lang].seats[state.seat][0])
+      .replace("{n}", name.value.trim()).replace("{t}", phone.value.trim())
+      .replace("{x}", x ? I18N[lang]["book.waNotes"].replace("{x}", x) : "");
+    const url = "https://wa.me/258853015130?text=" + encodeURIComponent(msg);
+    $("bookDoneLink").href = url;
+    $("bookDone").hidden = false;
+    $("bookDone").focus();
+    window.open(url, "_blank", "noopener");
+  });
+
+  function refresh() {
+    const w = $("bookWelcome");
+    if (saved && saved.name) { w.hidden = false; w.textContent = I18N[lang]["book.welcome"].replace("{n}", saved.name.split(" ")[0]); }
+    update();
+  }
+  return { refresh };
+}
+const booking = $("bookForm") && createBooking($("bookForm"));
 
 /* =========================================================
    Idioma
@@ -458,20 +693,26 @@ function applyLang(l) {
     const v = dict[el.dataset.i18n];
     if (v) el.textContent = v;
   });
+  document.querySelectorAll("[data-i18n-ph]").forEach((el) => { el.placeholder = dict[el.dataset.i18nPh]; });
   document.querySelectorAll(".lang__btn").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === l));
-  const words = dict.marquee.map((w) => `<span>${w}</span><i>✦</i>`).join("");
-  document.getElementById("marquee").innerHTML = words + words;
-  foodShow.refresh();
-  drinkWheel.refresh();
+  const marquee = $("marquee");
+  if (marquee) {
+    const words = dict.marquee.map((w) => `<span>${w}</span>`).join("");
+    marquee.innerHTML = words + words;
+  }
+  foodShow && foodShow.refresh();
+  drinkWheel && drinkWheel.refresh();
+  booking && booking.refresh();
+  renderHome();
 }
 document.querySelectorAll(".lang__btn").forEach((b) => b.addEventListener("click", () => applyLang(b.dataset.lang)));
 applyLang(lang);
 
 /* =========================================================
-   Nav, reveal, parallax, brasas
+   Navegação, parallax e brasas (só no topo da página inicial)
    ========================================================= */
-const nav = document.getElementById("nav");
-const burger = document.getElementById("burger");
+const nav = $("nav");
+const burger = $("burger");
 const onScroll = () => nav.classList.toggle("is-scrolled", window.scrollY > 40);
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
@@ -480,21 +721,9 @@ burger.addEventListener("click", () => {
   burger.setAttribute("aria-expanded", open);
   document.body.style.overflow = open ? "hidden" : "";
 });
-document.querySelectorAll("#navLinks a").forEach((a) => a.addEventListener("click", () => {
-  nav.classList.remove("is-open");
-  burger.setAttribute("aria-expanded", "false");
-  document.body.style.overflow = "";
-}));
 
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-
-const dish = document.getElementById("heroDish");
-if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
+const dish = $("heroDish");
+if (dish && !reduceMotion && window.matchMedia("(pointer: fine)").matches) {
   window.addEventListener("pointermove", (e) => {
     const x = (e.clientX / window.innerWidth - 0.5) * 2;
     const y = (e.clientY / window.innerHeight - 0.5) * 2;
@@ -503,19 +732,19 @@ if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
 }
 
 (() => {
-  if (reduceMotion) return;
-  const c = document.getElementById("embers");
+  const c = $("embers");
+  if (!c || reduceMotion) return;
   const ctx = c.getContext("2d");
   let w, h, dpr;
   const parts = [];
   const resize = () => {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
-    w = c.width = innerWidth * dpr;
-    h = c.height = innerHeight * dpr;
+    w = c.width = c.clientWidth * dpr;
+    h = c.height = c.clientHeight * dpr;
   };
   resize();
   addEventListener("resize", resize);
-  const count = innerWidth < 700 ? 28 : 60;
+  const count = innerWidth < 700 ? 22 : 45;
   const spawn = (p = {}) => Object.assign(p, {
     x: Math.random() * w,
     y: h + Math.random() * h * 0.5,
@@ -526,24 +755,28 @@ if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
     hue: 20 + Math.random() * 25,
   });
   for (let i = 0; i < count; i++) { const p = spawn(); p.y = Math.random() * h; parts.push(p); }
+  let visible = true;
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(c);
   const tick = () => {
-    ctx.clearRect(0, 0, w, h);
-    for (const p of parts) {
-      p.y -= p.vy;
-      p.drift += 0.02;
-      p.x += Math.sin(p.drift) * 0.4 * dpr;
-      const a = Math.max(0, Math.min(1, p.y / h)) * p.life;
-      ctx.beginPath();
-      ctx.fillStyle = `hsla(${p.hue}, 100%, 60%, ${a})`;
-      ctx.shadowBlur = 8 * dpr;
-      ctx.shadowColor = `hsla(${p.hue}, 100%, 50%, ${a})`;
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fill();
-      if (p.y < -10) spawn(p);
+    if (visible) {
+      ctx.clearRect(0, 0, w, h);
+      for (const p of parts) {
+        p.y -= p.vy;
+        p.drift += 0.02;
+        p.x += Math.sin(p.drift) * 0.4 * dpr;
+        const a = Math.max(0, Math.min(1, p.y / h)) * p.life;
+        ctx.beginPath();
+        ctx.fillStyle = `hsla(${p.hue}, 100%, 60%, ${a})`;
+        ctx.shadowBlur = 8 * dpr;
+        ctx.shadowColor = `hsla(${p.hue}, 100%, 50%, ${a})`;
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+        if (p.y < -10) spawn(p);
+      }
     }
     requestAnimationFrame(tick);
   };
   tick();
 })();
 
-document.getElementById("year").textContent = new Date().getFullYear();
+$("year").textContent = new Date().getFullYear();

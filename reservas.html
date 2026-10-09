@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reservas — King of the Grill Baía Mall</title>
+  <meta name="description" content="Reserve uma mesa no King of the Grill Baía Mall, Maputo. Escolha o dia, a hora e a ocasião.">
+  <meta name="theme-color" content="#120707">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..900,100;1,9..144,700..900,100&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="book">
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/img/logo.png" alt="King of the Grill" width="629" height="600">
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Principal">
+      <a href="index.html" data-i18n="nav.home">Início</a>
+      <a href="menu.html" data-i18n="nav.menu">Menu</a>
+      <a href="bebidas.html" data-i18n="nav.drinks">Bebidas</a>
+      <a href="reservas.html" data-i18n="nav.book" aria-current="page">Reservas</a>
+    </nav>
+    <div class="nav__right">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang__btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="reservas.html" class="btn btn--red nav__cta" data-i18n="nav.reserve">Reservar mesa</a>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <header class="page-head">
+      <h1 data-i18n="book.title">Reservar mesa</h1>
+      <p data-i18n="book.lede">Escolha os detalhes e envie o pedido pelo WhatsApp. O restaurante confirma a disponibilidade por lá.</p>
+      <p class="book__welcome" id="bookWelcome" hidden></p>
+    </header>
+
+    <div class="book">
+      <form class="book__form" id="bookForm" novalidate>
+        <fieldset class="step">
+          <legend><span class="step__n">1</span><span data-i18n="book.q.people">Quantas pessoas?</span></legend>
+          <div class="stepper">
+            <button type="button" class="stepper__btn" data-step="-1" aria-label="Menos uma pessoa">−</button>
+            <output class="stepper__value" id="peopleOut" aria-live="polite">2</output>
+            <button type="button" class="stepper__btn" data-step="1" aria-label="Mais uma pessoa">+</button>
+          </div>
+          <p class="step__hint" data-i18n="book.h.people">Para grupos acima de 20, ligue-nos.</p>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step__n">2</span><span data-i18n="book.q.day">Que dia?</span></legend>
+          <div class="chips" id="dayChips"></div>
+          <label class="field field--inline">
+            <span data-i18n="book.otherDay">Outra data</span>
+            <input type="date" id="dayInput">
+          </label>
+          <p class="step__error" id="errDay" hidden data-i18n="book.e.day">Escolha um dia.</p>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step__n">3</span><span data-i18n="book.q.time">A que horas?</span></legend>
+          <p class="chips__group" data-i18n="book.lunch">Almoço</p>
+          <div class="chips" id="lunchChips"></div>
+          <p class="chips__group" data-i18n="book.dinner">Jantar</p>
+          <div class="chips" id="dinnerChips"></div>
+          <p class="step__error" id="errTime" hidden data-i18n="book.e.time">Escolha uma hora.</p>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step__n">4</span><span data-i18n="book.q.occasion">É uma ocasião especial?</span></legend>
+          <div class="chips" id="occasionChips"></div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step__n">5</span><span data-i18n="book.q.seat">Onde prefere ficar?</span></legend>
+          <div class="seats" id="seatChips"></div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step__n">6</span><span data-i18n="book.q.you">Os seus dados</span></legend>
+          <div class="fields">
+            <label class="field">
+              <span data-i18n="book.name">Nome</span>
+              <input type="text" id="nameInput" autocomplete="name" required>
+              <span class="step__error" id="errName" hidden data-i18n="book.e.name">Escreva o seu nome.</span>
+            </label>
+            <label class="field">
+              <span data-i18n="book.phone">Telemóvel</span>
+              <input type="tel" id="phoneInput" autocomplete="tel" inputmode="tel" placeholder="+258 84 000 0000" required>
+              <span class="step__error" id="errPhone" hidden data-i18n="book.e.phone">Escreva um número com pelo menos 9 dígitos.</span>
+            </label>
+            <label class="field field--wide">
+              <span data-i18n="book.notes">Pedidos especiais (opcional)</span>
+              <textarea id="notesInput" rows="3" data-i18n-ph="book.notesPh" placeholder="Alergias, cadeira de bebé, bolo de aniversário…"></textarea>
+            </label>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="rememberInput" checked>
+            <span data-i18n="book.remember">Guardar o meu nome e telemóvel neste dispositivo</span>
+          </label>
+        </fieldset>
+
+        <div class="book__submit">
+          <button type="submit" class="btn btn--red btn--big" data-i18n="book.send">Enviar pedido de reserva</button>
+          <p class="step__hint" data-i18n="book.h.send">Abre o WhatsApp com a mensagem pronta. A mesa fica reservada quando o restaurante responder.</p>
+        </div>
+        <div class="book__done" id="bookDone" hidden tabindex="-1">
+          <h2 data-i18n="book.done.title">Pedido pronto no WhatsApp</h2>
+          <p data-i18n="book.done.text">Envie a mensagem que abriu no WhatsApp para concluir. Se a janela não abriu, use o botão abaixo.</p>
+          <a class="btn btn--wine" id="bookDoneLink" target="_blank" rel="noopener" data-i18n="book.done.open">Abrir o WhatsApp</a>
+        </div>
+      </form>
+
+      <aside class="ticket" aria-label="Resumo da reserva" aria-live="polite">
+        <div class="ticket__paper">
+          <p class="ticket__brand">King of the Grill<br><span>Baía Mall, Maputo</span></p>
+          <p class="ticket__label" data-i18n="book.ticket">Pedido de reserva</p>
+          <dl class="ticket__rows">
+            <div><dt data-i18n="book.t.table">Mesa</dt><dd id="tPeople"></dd></div>
+            <div><dt data-i18n="book.t.day">Dia</dt><dd id="tDay"></dd></div>
+            <div><dt data-i18n="book.t.time">Hora</dt><dd id="tTime"></dd></div>
+            <div><dt data-i18n="book.t.occasion">Ocasião</dt><dd id="tOccasion"></dd></div>
+            <div><dt data-i18n="book.t.seat">Lugar</dt><dd id="tSeat"></dd></div>
+            <div><dt data-i18n="book.t.name">Nome</dt><dd id="tName"></dd></div>
+          </dl>
+          <p class="ticket__notes" id="tNotes" hidden></p>
+          <p class="ticket__foot" data-i18n="book.t.foot">Confirmação pelo WhatsApp</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="assets/img/logo.png" alt="King of the Grill" width="629" height="600" loading="lazy">
+      </div>
+      <div>
+        <h2 class="footer__title">Baía Mall</h2>
+        <p data-i18n="contact.city">Maputo, Moçambique</p>
+        <a class="footer__phone" href="tel:+258853015130">+258 85 301 5130</a>
+      </div>
+      <div class="footer__links">
+        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+        <a href="bebidas.html" data-i18n="nav.drinks">Bebidas</a>
+        <a href="reservas.html" data-i18n="nav.book">Reservas</a>
+        <a href="https://wa.me/258853015130" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/kingofthegrill_baia/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <p class="footer__small">© <span id="year"></span> King of the Grill. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
+    <details class="credits">
+      <summary data-i18n="footer.credits">Créditos das imagens das bebidas</summary>
+      <p>Coca-Cola, Coca-Cola Zero, Pepsi, Fanta, Sprite e Schweppes: fotos de <a href="https://world.openfoodfacts.org/" target="_blank" rel="noopener">Open Food Facts</a> (contribuidores), <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, recortadas.
+        Produtos <a href="https://world.openfoodfacts.org/product/5449000214911" target="_blank" rel="noopener">5449000214911</a>,
+        <a href="https://world.openfoodfacts.org/product/5449000131805" target="_blank" rel="noopener">5449000131805</a>,
+        <a href="https://world.openfoodfacts.org/product/4770477231516" target="_blank" rel="noopener">4770477231516</a>,
+        <a href="https://world.openfoodfacts.org/product/5000112518405" target="_blank" rel="noopener">5000112518405</a>,
+        <a href="https://world.openfoodfacts.org/product/5449000286314" target="_blank" rel="noopener">5449000286314</a> e
+        <a href="https://world.openfoodfacts.org/product/8414100388630" target="_blank" rel="noopener">8414100388630</a>.</p>
+    </details>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

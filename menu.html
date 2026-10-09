@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu — King of the Grill Baía Mall</title>
+  <meta name="description" content="Menu do King of the Grill Baía Mall: grelhados, frango, burgers, marisco, pizzas, massas e mais, com preços em MTN.">
+  <meta name="theme-color" content="#120707">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..900,100;1,9..144,700..900,100&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="menu">
+  <header class="nav" id="nav">
+    <a href="index.html" class="nav__brand">
+      <img src="assets/img/logo.png" alt="King of the Grill" width="629" height="600">
+    </a>
+    <nav class="nav__links" id="navLinks" aria-label="Principal">
+      <a href="index.html" data-i18n="nav.home">Início</a>
+      <a href="menu.html" data-i18n="nav.menu" aria-current="page">Menu</a>
+      <a href="bebidas.html" data-i18n="nav.drinks">Bebidas</a>
+      <a href="reservas.html" data-i18n="nav.book">Reservas</a>
+    </nav>
+    <div class="nav__right">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang__btn" data-lang="pt" aria-pressed="true">PT</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="reservas.html" class="btn btn--red nav__cta" data-i18n="nav.reserve">Reservar mesa</a>
+      <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <header class="page-head">
+      <h1 data-i18n="menu.title">O menu</h1>
+      <p data-i18n="menu.note">Preços em meticais (MTN), conforme publicados pela marca. Sujeitos a confirmação no restaurante.</p>
+    </header>
+
+    <!-- Vitrine do menu (estrutura do vídeo "UI/UX Bunker" com a identidade da marca): prato que entra a rodar,
+         título em duas linhas, cartão de informação à direita e fila de miniaturas em baixo -->
+    <div class="show" id="foodShow">
+      <div class="show__arc" aria-hidden="true"></div>
+      <div class="show__plate" aria-hidden="true"></div>
+      <div class="show__head">
+        <h2 class="show__title" aria-live="polite">
+          <span class="show__line show__line--light"><span></span></span>
+          <span class="show__line show__line--bold"><span></span></span>
+        </h2>
+        <div class="show__actions">
+          <a href="reservas.html" class="show__act" data-i18n="nav.reserve">Reservar mesa</a>
+          <a href="https://wa.me/258853015130" class="show__act" id="showOrder" target="_blank" rel="noopener" data-i18n="show.order">Pedir no WhatsApp</a>
+        </div>
+      </div>
+      <aside class="show__card">
+        <div class="show__tabs" role="tablist" aria-label="Detalhes">
+          <button type="button" role="tab" class="show__tab" data-tab="list" aria-selected="true" data-i18n="show.tabList">Pratos</button>
+          <button type="button" role="tab" class="show__tab" data-tab="about" aria-selected="false" data-i18n="show.tabAbout">Sobre</button>
+        </div>
+        <div class="show__card-inner">
+          <div class="show__card-head">
+            <span class="show__badge"><b></b><small data-i18n="show.dishes">pratos</small></span>
+            <div>
+              <p class="show__cat"></p>
+              <p class="show__from"></p>
+            </div>
+          </div>
+          <ul class="menu__list show__list"></ul>
+          <p class="show__about" hidden></p>
+        </div>
+      </aside>
+      <div class="show__thumbs">
+        <button type="button" class="show__nav" data-dir="-1" data-i18n="prev">Anterior</button>
+        <div class="show__track" role="tablist" aria-label="Categorias"></div>
+        <button type="button" class="show__nav" data-dir="1" data-i18n="next">Seguinte</button>
+      </div>
+      <nav class="show__dock" aria-label="Atalhos">
+        <a href="menu.html" aria-current="page" data-i18n="show.food">Comida</a>
+        <a href="bebidas.html" data-i18n="nav.drinks">Bebidas</a>
+        <a href="reservas.html" data-i18n="nav.book">Reservas</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="assets/img/logo.png" alt="King of the Grill" width="629" height="600" loading="lazy">
+      </div>
+      <div>
+        <h2 class="footer__title">Baía Mall</h2>
+        <p data-i18n="contact.city">Maputo, Moçambique</p>
+        <a class="footer__phone" href="tel:+258853015130">+258 85 301 5130</a>
+      </div>
+      <div class="footer__links">
+        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+        <a href="bebidas.html" data-i18n="nav.drinks">Bebidas</a>
+        <a href="reservas.html" data-i18n="nav.book">Reservas</a>
+        <a href="https://wa.me/258853015130" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/kingofthegrill_baia/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <p class="footer__small">© <span id="year"></span> King of the Grill. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
+    <details class="credits">
+      <summary data-i18n="footer.credits">Créditos das imagens das bebidas</summary>
+      <p>Coca-Cola, Coca-Cola Zero, Pepsi, Fanta, Sprite e Schweppes: fotos de <a href="https://world.openfoodfacts.org/" target="_blank" rel="noopener">Open Food Facts</a> (contribuidores), <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, recortadas.
+        Produtos <a href="https://world.openfoodfacts.org/product/5449000214911" target="_blank" rel="noopener">5449000214911</a>,
+        <a href="https://world.openfoodfacts.org/product/5449000131805" target="_blank" rel="noopener">5449000131805</a>,
+        <a href="https://world.openfoodfacts.org/product/4770477231516" target="_blank" rel="noopener">4770477231516</a>,
+        <a href="https://world.openfoodfacts.org/product/5000112518405" target="_blank" rel="noopener">5000112518405</a>,
+        <a href="https://world.openfoodfacts.org/product/5449000286314" target="_blank" rel="noopener">5449000286314</a> e
+        <a href="https://world.openfoodfacts.org/product/8414100388630" target="_blank" rel="noopener">8414100388630</a>.</p>
+    </details>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
