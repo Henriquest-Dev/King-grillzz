@@ -173,7 +173,7 @@ const DRINKS = [
     desc: { pt: "Manga batida com gelo, servida em taça.", en: "Mango blended with ice, served in a coupe." } },
   { name: "Coca-Cola", sub: { pt: "Original", en: "Original taste" }, theme: "#d83c3a", img: "assets/drinks/coca-cola.webp", g: [SVG.ice, lemon], tags: SODA,
     desc: { pt: "O sabor original, bem gelado, para acompanhar o grelhado.", en: "The original taste, ice cold, to go with the grill." } },
-  { name: "Coca-Cola Zero", sub: { pt: "Zero açúcar", en: "Zero sugar" }, theme: "#3a3434", img: "assets/drinks/coca-cola-zero.webp", g: [SVG.ice, lime], tags: SODA,
+  { name: "Coca-Cola Zero", sub: { pt: "Zero açúcar", en: "Zero sugar" }, theme: "#b3262b", img: "assets/drinks/coca-cola-zero.webp", g: [SVG.ice, lime], tags: SODA,
     desc: { pt: "O sabor Coca-Cola sem açúcar.", en: "Coca-Cola taste with zero sugar." } },
   { name: "Pepsi", sub: { pt: "Cola", en: "Cola" }, theme: "#2f62c0", img: "assets/drinks/pepsi.webp", g: [SVG.ice, SVG.bubbles], tags: SODA,
     desc: { pt: "Cola fresca com bolhas finas.", en: "Crisp cola with fine bubbles." } },
