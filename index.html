@@ -9,7 +9,7 @@
   <link rel="icon" href="assets/img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:opsz,wght,SOFT@9..144,700..900,100&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:opsz,wght,SOFT@9..144,700..900,100&family=Inter:wght@400;500;600&family=Barlow+Condensed:wght@200;300;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -95,23 +95,49 @@
         <p class="section-head__note" data-i18n="menu.note">Preços em meticais (MTN), conforme publicados pela marca. Sujeitos a confirmação no restaurante.</p>
       </header>
 
-      <div class="wheel wheel--food" id="foodWheel">
-        <div class="wheel__stage">
-          <div class="wheel__title" aria-live="polite">
-            <h3 class="wheel__name"></h3>
-            <span class="wheel__sub"></span>
-          </div>
-          <div class="wheel__ring" aria-hidden="true"></div>
-          <div class="wheel__count" aria-hidden="true"></div>
-          <div class="wheel__panel">
-            <ul class="menu__list"></ul>
+      <!-- Vitrine do menu (modelo do vídeo "UI/UX Bunker"): prato que entra a rodar, título em duas linhas,
+           cartão de informação à direita e fila de miniaturas em baixo -->
+      <div class="show" id="foodShow">
+        <div class="show__arc" aria-hidden="true"></div>
+        <div class="show__plate" aria-hidden="true"></div>
+        <div class="show__head">
+          <p class="show__rank"></p>
+          <h3 class="show__title" aria-live="polite">
+            <span class="show__line show__line--light"><span></span></span>
+            <span class="show__line show__line--bold"><span></span></span>
+          </h3>
+          <div class="show__actions">
+            <a href="#contacto" class="show__act" data-i18n="show.reserve">Reservar mesa</a>
+            <a href="https://wa.me/258853015130" class="show__act" id="showOrder" target="_blank" rel="noopener" data-i18n="show.order">Pedir no WhatsApp</a>
           </div>
         </div>
-        <div class="wheel__controls">
-          <button type="button" class="wheel__nav" data-dir="-1" data-i18n="prev">Anterior</button>
-          <div class="wheel__chips" role="tablist" aria-label="Categorias"></div>
-          <button type="button" class="wheel__nav" data-dir="1" data-i18n="next">Seguinte</button>
+        <aside class="show__card">
+          <div class="show__tabs" role="tablist" aria-label="Detalhes">
+            <button type="button" role="tab" class="show__tab" data-tab="list" aria-selected="true" data-i18n="show.tabList">Pratos</button>
+            <button type="button" role="tab" class="show__tab" data-tab="about" aria-selected="false" data-i18n="show.tabAbout">Sobre</button>
+          </div>
+          <div class="show__card-inner">
+            <div class="show__card-head">
+              <span class="show__badge"><b></b><small data-i18n="show.dishes">pratos</small></span>
+              <div>
+                <p class="show__cat"></p>
+                <p class="show__from"></p>
+              </div>
+            </div>
+            <ul class="menu__list show__list"></ul>
+            <p class="show__about" hidden></p>
+          </div>
+        </aside>
+        <div class="show__thumbs">
+          <button type="button" class="show__nav" data-dir="-1" data-i18n="prev">Anterior</button>
+          <div class="show__track" role="tablist" aria-label="Categorias"></div>
+          <button type="button" class="show__nav" data-dir="1" data-i18n="next">Seguinte</button>
         </div>
+        <nav class="show__dock" aria-label="Atalhos">
+          <a href="#menu" class="is-active" data-i18n="show.food">Comida</a>
+          <a href="#bebidas" data-i18n="nav.drinks">Bebidas</a>
+          <a href="#contacto" data-i18n="nav.reserve">Reservar</a>
+        </nav>
       </div>
     </section>
 
@@ -132,6 +158,13 @@
           <div class="wheel__ring" aria-hidden="true"></div>
           <div class="wheel__garnish wheel__garnish--a" aria-hidden="true"></div>
           <div class="wheel__garnish wheel__garnish--b" aria-hidden="true"></div>
+          <div class="wheel__pedestal" aria-hidden="true"></div>
+          <div class="wheel__bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="wheel__info" aria-live="polite">
+            <span class="wheel__index"></span>
+            <p class="wheel__desc"></p>
+            <ul class="wheel__tags"></ul>
+          </div>
           <div class="wheel__count" aria-hidden="true"></div>
         </div>
         <div class="wheel__controls">
@@ -208,12 +241,13 @@
     <details class="credits">
       <summary data-i18n="footer.credits">Créditos das imagens das bebidas</summary>
       <ul>
-        <li>Coca-Cola — <a href="https://commons.wikimedia.org/wiki/File:Coca_Cola_glass_bottle_transparent.png" target="_blank" rel="noopener">Hariadi, ed. Bruce The Deus</a>, CC BY-SA 3.0</li>
-        <li>Coca-Cola Zero — <a href="https://commons.wikimedia.org/wiki/File:2_cans_of_Coca-Cola_Zero_Sugar_20220124.jpg" target="_blank" rel="noopener">Solomon203</a>, CC BY-SA 4.0 (recortada)</li>
-        <li>Pepsi — <a href="https://commons.wikimedia.org/wiki/File:Pepsi_lime_330ml_can-front_PNr%C2%B00852.jpg" target="_blank" rel="noopener">D-Kuru</a>, CC BY-SA 4.0 (recortada)</li>
-        <li>Fanta — <a href="https://commons.wikimedia.org/wiki/File:Fanta-Orange-Can-330ml_84177_(7116950883).jpg" target="_blank" rel="noopener">Emilian Robert Vicol</a>, CC BY 2.0 (recortada)</li>
-        <li>Sprite — <a href="https://commons.wikimedia.org/wiki/File:Sprite_lemon_lime_1.jpg" target="_blank" rel="noopener">Connor J Williams</a>, CC BY 2.0 (recortada)</li>
-        <li>Schweppes — <a href="https://commons.wikimedia.org/wiki/File:Schweppes_Indian_Tonic_Water_(front).jpg" target="_blank" rel="noopener">Reedy</a>, CC BY-SA 3.0 (recortada)</li>
+        <li>Coca-Cola, Coca-Cola Zero, Pepsi, Fanta, Sprite, Schweppes — fotos de <a href="https://world.openfoodfacts.org/" target="_blank" rel="noopener">Open Food Facts</a> (contribuidores), <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>, recortadas.
+          Produtos: <a href="https://world.openfoodfacts.org/product/5449000214911" target="_blank" rel="noopener">5449000214911</a>,
+          <a href="https://world.openfoodfacts.org/product/5449000131805" target="_blank" rel="noopener">5449000131805</a>,
+          <a href="https://world.openfoodfacts.org/product/4770477231516" target="_blank" rel="noopener">4770477231516</a>,
+          <a href="https://world.openfoodfacts.org/product/5000112518405" target="_blank" rel="noopener">5000112518405</a>,
+          <a href="https://world.openfoodfacts.org/product/5449000286314" target="_blank" rel="noopener">5449000286314</a>,
+          <a href="https://world.openfoodfacts.org/product/8414100388630" target="_blank" rel="noopener">8414100388630</a></li>
       </ul>
     </details>
   </footer>
